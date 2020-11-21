@@ -31,7 +31,7 @@ function App() {
       setIsLoading(true);
       try {
         const result = await axios(
-          `http://localhost:3000/posts?_page=${pageNumber}&_limit=10`
+          `http://localhost:5000/posts?_page=${pageNumber}&_limit=10`
         );
         result.data.length === 0 && setEnd(true);
         setArticles(prev => [...prev, ...result.data]);
