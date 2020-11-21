@@ -4,7 +4,7 @@ git clone https://github.com/barbaramistrz/infinite-scroll.git
 
 cd infinite-scroll 
 
-npm intall 
+npm install 
 
 Na porcie 3000:
 
