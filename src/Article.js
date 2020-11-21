@@ -3,24 +3,26 @@ import "./index.css";
 
 const Article = ({ details, index, toRef }) => {
 
-  return (
-      <div  className="column has-text-centered is-half fancy_card">
-    <a href={details.url} target="_blank" rel="noreferrer" >
-        <div id={`article${index}`} key={index}>
-      <img
-        src={details.thumb}
-        alt={details.title}
-        height="200px"
-        className="card-image is-inline-block"
-      />
-      {/* <figcaption>{details.date.slice(0, 10)}</figcaption> */}
-      <div className="card-content" >
-        <p className="title is-5" ref={toRef}>{details.title}</p> 
-        </div>
+const lastIndexOfDot = details.thumb.lastIndexOf(".")
+const imgUrl = [details.thumb.slice(0, lastIndexOfDot), "-440x280", details.thumb.slice(lastIndexOfDot)].join("")
 
-  
-    </div>
-    </a>
+return (
+    <div className="column has-text-centered is-half fancy-card">
+      <a href={details.url} target="_blank" rel="noreferrer">
+        <div id={`article${index}`} key={index}>
+          <div className="card-image image">
+          <img
+            src={imgUrl}
+            alt={details.title}
+          />
+          </div>
+          <div className="card-content">
+            <p className="title is-5" ref={toRef}>
+              {details.title}
+            </p>
+          </div>
+        </div>
+      </a>
     </div>
   );
 };

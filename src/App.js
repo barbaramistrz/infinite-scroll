@@ -56,9 +56,9 @@ function App() {
             }
               return <Article key={index} details={item} />
           })}
-          {isError && <div className="has-text-centered">Ups!</div>}
-          {isLoading && <div className="has-text-centered">...</div>}
-          {end && <div className="has-text-centered">Koniec</div>}
+          {isError && <div className="has-text-centered column"><p className="subtitle has-text-danger-dark is-6">Ups!</p></div>}
+          {isLoading && <div className="has-text-centered column"><p className="subtitle has-text-danger-dark is-6">...</p></div>}
+          {end && <div className="has-text-centered column"><p className="subtitle has-text-danger-dark  is-6">KONIEC</p></div>}
         </div>
        
       </div>
